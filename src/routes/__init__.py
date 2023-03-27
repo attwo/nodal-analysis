@@ -11,4 +11,4 @@ async def my_profile(data: NodalCalcRequest):
     """
     # Функция для выполнения узлового анализа
     from src.calculations.nodal import calc_nodal
-    pass
+    return calc_nodal(data.vlp.dict(), data.ipr.dict())
