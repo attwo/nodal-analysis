@@ -22,6 +22,5 @@ def test_calc_model_success(api_client, generate_data_for_tests):
     assert type(content) is list
     assert len(content) == 1
     item = content[0]
-    assert item
-    assert item["p_wf"] is not None
-    assert item["q_liq"] is not None
+    assert item.get("p_wf") is not None
+    assert item.get("q_liq") is not None
