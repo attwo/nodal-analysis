@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+
 from src.models.models import NodalCalcRequest, NodalCalcResponse
 
 main_router = APIRouter(prefix="/nodal", tags=["NodalAnalysis"])
@@ -11,4 +12,5 @@ async def my_profile(data: NodalCalcRequest):
     """
     # Функция для выполнения узлового анализа
     from src.calculations.nodal import calc_nodal
-    pass
+
+    return calc_nodal(data.vlp.dict(), data.ipr.dict())
